@@ -1,0 +1,494 @@
+clientserver architecture
+ip address
+dns
+load balancer
+proxy server
+firewall
+cdn
+api gateway
+message queue
+cache
+database
+storage
+security
+monitoring
+logging
+error handling
+scalability
+reliability
+availability
+performance
+maintainability
+testability
+observability
+observability
+observability
+api rate limiting
+api versioning
+api authentication
+api authorization
+api security
+api monitoring
+api logging
+api error handling
+api scalability
+api reliability
+api availability
+api performance
+api maintainability
+api testability
+api observability
+proxy, reverse proxy 
+latency
+restapi /graphql (specific use case , efficiency etc)
+databses 
+vertical/horizontal scaling (comaprision)
+database sharding
+database replication
+database indexing
+database transactions
+database consistency
+database isolation
+database durability
+caching
+cache invalidation
+cache eviction
+cache hit
+cache miss
+cache stampede
+cache warming
+cache coherency
+cache consistency
+cache isolation
+cache durability
+normalisation and denormalization
+partitioning
+replication
+sharding
+consistency models
+CAP theorem
+ACID properties
+BASE properties
+concurrency control
+locking
+time-stamping
+optimistic concurrency control
+pessimistic concurrency control
+distributed transactions
+two-phase commit
+three-phase commit
+consensus algorithms
+paxos
+raft
+blockchain
+cap theorem
+web sockets
+long polling
+server sent events
+message queue
+message broker
+message bus
+message queue vs message broker
+message queue vs message bus
+message broker vs message bus
+message queue vs pub sub
+message broker vs pub sub
+message bus vs pub sub
+message queue vs pub sub vs message broker
+message queue vs pub sub vs message bus
+message queue vs pub sub vs message broker vs message bus
+webhooks
+idempotency
+microservice and its problems (sleeping , routing , dead letter queue , tracing , error detection etc)
+blob storage
+batch vs stream processing
+strong vs eventual consistency
+consistent hashing 
+bloom filter
+service discovery 
+cdns , api gate way
+fault tolerance 
+monitoring , authN & authZ
+
+use of async write , use of lsm tree database
+implementation of redundant and fallover
+centalized logging solution
+cahing and its types use case for fastre reads
+
+
+
+
+
+requirement distinction
+arcitechural foundation
+data schema design
+business domain segmentation
+security measures
+code sustainability
+testing standards
+user interface focus
+expandability strategies
+syatem reliability
+uptime optimization
+performance enhancement
+cost Managementtechnical docx
+migration preparedness
+cloud service utilization
+traffic handling plannig
+disaster risk Managementci/cd Integration
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------
+Transitioning from Low-Level Design (LLD) to **High-Level Design (HLD)** shifts the focus from "How do I write clean code?" to "How do I scale this system to millions of users?"
+
+In HLD, your tools aren't classes and patterns; they are databases, load balancers, messaging queues, and caching layers. Here is the tier-wise breakdown and the master prompt for your HLD preparation.
+
+---
+
+## Tier 1: The Beginner Level
+
+**Focus:** The "Building Blocks" and the Request-Response cycle.
+
+* **Core Concepts:**
+* **Client-Server Architecture:** DNS, Load Balancers (Layer 4 vs. Layer 7).
+* **Database Basics:** SQL vs. NoSQL (When to use which).
+* **Horizontal vs. Vertical Scaling:** Why we prefer "scaling out."
+
+
+* **Networking:** HTTP/HTTPS, REST APIs, and basic Status Codes.
+* **Caching:** Why we need it and the concept of Content Delivery Networks (CDNs).
+* **Standard Interview Questions:**
+* Design a URL Shortener (TinyURL).
+* Design a basic Pastebin.
+
+
+* **Visuals:**
+
+---
+
+## Tier 2: The Intermediate Level
+
+**Focus:** Availability, Reliability, and Data Consistency.
+
+* **Core Concepts:**
+* **CAP Theorem:** Consistency, Availability, and Partition Tolerance tradeoffs.
+* **Database Deep-Dive:** Indexing, Sharding (Partitioning), and Replication (Master-Slave).
+* **Asynchronous Processing:** Message Queues (Kafka, RabbitMQ) and Pub/Sub models.
+* **Microservices:** API Gateways, Service Discovery, and Circuit Breakers.
+
+
+* **Caching Strategies:** Write-through, Write-around, and Eviction policies (LRU/LFU).
+* **Standard Interview Questions:**
+* Design a Notification System.
+* Design a Rate Limiter (Token Bucket vs. Leaky Bucket).
+* Design a Top-K Trending Topics system (using Redis/Storm).
+
+
+* **Visuals:**
+
+---
+
+## Tier 3: The Advanced Level
+
+**Focus:** Global Scalability, Fault Tolerance, and Observability.
+
+* **Core Concepts:**
+* **Distributed Consensus:** Paxos or Raft algorithms (How databases stay in sync).
+* **Gossip Protocols:** How nodes in a large cluster talk to each other.
+* **Data Partitioning:** Consistent Hashing (The backbone of DynamoDB/Cassandra).
+* **Monitoring & Logging:** ELK Stack (Elasticsearch, Logstash, Kibana) and Distributed Tracing.
+* **Security:** OAuth2, JWT, and Rate Limiting at the edge.
+
+
+* **Standard Interview Questions:**
+* Design a Video Streaming Service (Netflix/YouTube - Handling petabytes of data).
+* Design a Distributed File System (GCS/S3).
+* Design a Real-time Messenger (WhatsApp/Slack - Handling millions of concurrent socket connections).
+
+
+* **Visuals:**
+
+---
+
+## The Master Prompt for your HLD AI Agent
+
+Copy and paste this into your AI agent to generate the PDF content:
+
+> "Act as a Principal System Architect. Create a High-Level Design (HLD) deep-dive for **[Insert System Name, e.g., 'Instagram']**. Provide the following sections:
+> 1. **Requirement Gathering:** Functional requirements (what it does) and Non-functional requirements (Scalability, Availability, Latency).
+> 2. **Capacity Estimation:** Back-of-the-envelope calculations for Storage, Bandwidth, and Requests Per Second (RPS).
+> 3. **Core Components:** Detailed explanation of the Load Balancer, Web Servers, and Databases chosen.
+> 4. **Data Schema:** Key entities and their relationships (SQL vs NoSQL justification).
+> 5. **Data Flow:** Step-by-step trace of a request (e.g., 'User uploads a photo').
+> 6. **Advanced Optimizations:** How to handle hot partitions, caching layers, and disaster recovery.
+> 7. **Trade-offs:** Explain why you chose Availability over Consistency (or vice-versa) based on the CAP theorem.
+> 8. **Detailed Diagram Description:** Describe exactly what the architecture diagram should look like for this system."
+> 
+> 
+
+---
+
+### Crucial "Bonus" Topics for HLD
+
+* **Back-of-the-envelope estimation:** You must practice calculating "How much RAM do I need for 10 million users?"
+* **SLA/SLOs:** Understanding 99.9% (three nines) vs 99.999% (five nines) availability.
+* **The "N+1" Problem:** Identifying bottlenecks in database queries at scale.
+
+**Would you like me to run the "Intermediate Level" prompt for a specific system, such as a Rate Limiter or a Notification Service, to see how the AI handles the detail?**
+
+
+--------------------------------------------------------
+
+To reach a "Principal Engineer" level of understanding for your PDF, you need to go beyond just "Load Balancers" and "Databases."
+
+Here is a categorized list of **200 concepts** (Core, Intermediate, and Advanced) that form the DNA of High-Level Design. I have grouped them logically so you can use them as "Tags" or "Chapters" in your practice document.
+
+---
+
+### 1. Architectural Patterns & High-Level Styles (1-25)
+
+1. Monolithic Architecture
+2. Microservices Architecture
+3. Serverless (FaaS)
+4. Event-Driven Architecture (EDA)
+5. Service Oriented Architecture (SOA)
+6. Peer-to-Peer (P2P) Systems
+7. Layered (N-Tier) Architecture
+8. Hexagonal (Ports and Adapters)
+9. Clean Architecture
+10. Micro-kernel Architecture
+11. CQRS (Command Query Responsibility Segregation)
+12. Event Sourcing
+13. Sidecar Pattern
+14. Ambassador Pattern
+15. Backend-for-Frontend (BFF)
+16. Strangler Fig Pattern (Migration)
+17. Pub-Sub Model
+18. Shared-Nothing Architecture
+19. Lambda Architecture (Big Data)
+20. Kappa Architecture
+21. Database-per-service
+22. Shared Database (Anti-pattern)
+23. Saga Pattern (Choreography)
+24. Saga Pattern (Orchestration)
+25. Bulkhead Pattern
+
+---
+
+### 2. Scalability & Traffic Management (26-60)
+
+26. Vertical Scaling (Scaling Up)
+27. Horizontal Scaling (Scaling Out)
+28. Load Balancing (L4 - Transport)
+29. Load Balancing (L7 - Application)
+30. Round Robin Scheduling
+31. Weighted Round Robin
+32. Least Connections Algorithm
+33. IP Hash Loading
+34. Consistent Hashing
+35. Hash Slots (Redis style)
+36. Global Server Load Balancing (GSLB)
+37. Anycast Routing
+38. Geo-DNS
+39. Content Delivery Networks (CDN)
+40. Edge Computing
+41. Reverse Proxy (Nginx/HAProxy)
+42. Forward Proxy
+43. API Gateway
+44. Rate Limiting (Throttling)
+45. Token Bucket Algorithm
+46. Leaky Bucket Algorithm
+47. Fixed Window Counter
+48. Sliding Window Log
+49. Backpressure
+50. Circuit Breaker Pattern
+51. Service Discovery (Client-side)
+52. Service Discovery (Server-side)
+53. Health Checks & Heartbeats
+54. Auto-scaling Groups
+55. Connection Pooling
+56. Sticky Sessions (Session Affinity)
+57. SSL Termination
+58. SSL Passthrough
+59. Blue-Green Deployment
+60. Canary Deployment
+
+---
+
+### 3. Database & Storage Mastery (61-105)
+
+61. Relational Databases (RDBMS)
+62. NoSQL (Key-Value)
+63. NoSQL (Document Store)
+64. NoSQL (Wide Column / Columnar)
+65. NoSQL (Graph Databases)
+66. ACID Properties
+67. BASE Properties
+68. CAP Theorem (The Deep-Dive)
+69. PACELC Theorem
+70. Database Normalization (1NF to 3NF)
+71. Denormalization (for Read Speed)
+72. Database Indexing (B-Tree)
+73. LSM Trees (Log-Structured Merge-Trees)
+74. Covering Indexes
+75. Composite Indexes
+76. Master-Slave Replication
+77. Master-Master Replication
+78. Multi-Region Replication
+79. Synchronous vs Asynchronous Replication
+80. Quorum-based Writes
+81. Database Sharding (Horizontal Partitioning)
+82. Range-based Sharding
+83. Hash-based Sharding
+84. Directory-based Sharding
+85. Hot Partition Problem (Celebrity Problem)
+86. Re-sharding Strategies
+87. Write-Ahead Logging (WAL)
+88. Read Replicas
+89. Materialized Views
+90. Database Federation
+91. Distributed Transactions (2PC - Two Phase Commit)
+92. TCC (Try-Confirm-Cancel)
+93. Vector Databases (for AI/LLM)
+94. Time-series Databases (InfluxDB)
+95. Spatial Indexing (Geohash / Quadtrees)
+96. Object Storage (S3)
+97. Block Storage (EBS)
+98. File Storage (EFS/NFS)
+99. Cold Storage (Glacier)
+100. Data Warehousing (Snowflake/BigQuery)
+101. Data Lakes
+102. ETL vs ELT
+103. Change Data Capture (CDC)
+104. WAL Shipping
+105. Point-in-Time Recovery (PITR)
+
+---
+
+### 4. Caching & Performance (106-130)
+
+106. Client-side Caching (Browser)
+107. CDN Caching
+108. Web Server Caching
+109. Distributed Caching (Redis/Memcached)
+110. Application Caching
+111. Cache Hit vs Cache Miss
+112. Cache Eviction: LRU (Least Recently Used)
+113. Cache Eviction: LFU (Least Frequently Used)
+114. Cache Eviction: FIFO
+115. Write-through Cache
+116. Write-around Cache
+117. Write-back (Write-behind) Cache
+118. Cache Aside Pattern
+119. Read-through Cache
+120. Cache Penetration
+121. Cache Breakdown (Hotspot)
+122. Cache Avalanche
+123. Cache Warming
+124. Negative Caching
+125. Local vs Remote Cache
+126. Global Cache
+127. Content Addressable Storage
+128. Memoization
+129. Compression (Gzip/Brotli)
+130. Serialization Formats (JSON vs Protobuf vs Avro)
+
+---
+
+### 5. Communication & Networking (131-155)
+
+131. OSI Model (7 Layers)
+132. TCP vs UDP
+133. HTTP 1.1 vs HTTP 2.0 vs HTTP 3.0 (QUIC)
+134. REST (Representational State Transfer)
+135. GraphQL
+136. gRPC
+137. WebSockets (Bi-directional)
+138. Long Polling
+139. Server-Sent Events (SSE)
+140. Message Queues (Point-to-Point)
+141. Pub/Sub Topics
+142. Dead Letter Queues (DLQ)
+143. Message Idempotency
+144. Exactly-once Delivery
+145. At-least-once Delivery
+146. At-most-once Delivery
+147. Message Ordering (Partition Keys)
+148. Remote Procedure Call (RPC)
+149. Zero-copy Networking
+150. Service Mesh (Istio/Linkerd)
+151. mTLS (Mutual TLS)
+152. API Versioning
+153. Webhooks
+154. Batch Processing
+155. Stream Processing (Flink/Spark Streaming)
+
+---
+
+### 6. Distributed Systems Theory & Resilience (156-180)
+
+156. Clock Skew / Drift
+157. Logical Clocks (Lamport Clocks)
+158. Vector Clocks
+159. Distributed Consensus (Paxos)
+160. Distributed Consensus (Raft)
+161. Leader Election Algorithms
+162. Gossip Protocol
+163. Heartbeat Mechanism
+164. Fencing Tokens
+165. Distributed Locking (Redlock)
+166. Idempotent Keys
+167. Retry Logic with Exponential Backoff
+168. Jitter in Retries
+169. Graceful Degradation
+170. Failover (Active-Passive)
+171. Failover (Active-Active)
+172. Split Brain Problem
+173. Byzantine Fault Tolerance
+174. Checkpointing
+175. Distributed Tracing (Jaeger/Zipkin)
+176. Structured Logging
+177. Metrics & Monitoring (Prometheus/Grafana)
+178. SLOs, SLAs, and SLIs
+179. Chaos Engineering
+180. Disaster Recovery (RTO/RPO)
+
+---
+
+### 7. Security & Infrastructure (181-200)
+
+181. OAuth 2.0 / OIDC
+182. JWT (JSON Web Tokens)
+183. RBAC (Role-Based Access Control)
+184. ABAC (Attribute-Based Access Control)
+185. API Keys vs Tokens
+186. Secrets Management (Vault)
+187. SQL Injection Prevention
+188. XSS & CSRF Mitigation
+189. Encryption at Rest
+190. Encryption in Transit
+191. Infrastructure as Code (Terraform)
+192. Containerization (Docker)
+193. Orchestration (Kubernetes)
+194. Serverless Databases
+195. Multi-tenancy Models
+196. Virtual Private Cloud (VPC)
+197. Subnets & Security Groups
+198. Bastion Hosts
+199. API Monetization/Usage Plans
+200. Governance & Compliance (GDPR/HIPAA)
+
+---
+
+**Next Step for your PDF:**
+Would you like me to take **one specific category** (e.g., Database Mastery) and write the "Interview Answers" and "Trade-offs" for its top 5 concepts so you can see how to fill out your document?
