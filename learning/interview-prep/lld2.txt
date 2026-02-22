@@ -1,0 +1,250 @@
+For your LLD (Low-Level Design) practice PDF, the focus shifts from infrastructure to **code structure, class relationships, and logic patterns.** While HLD is about how systems talk, LLD is about how objects interact within a single service.
+
+Here is a categorized list of **200 concepts** to master for LLD, organized by their role in the software lifecycle.
+
+---
+
+### 1. Object-Oriented Fundamentals (1-25)
+
+1. Classes vs. Objects
+2. Encapsulation (Data Hiding)
+3. Abstraction (Hiding Complexity)
+4. Inheritance (Is-A relationship)
+5. Polymorphism (Compile-time vs Runtime)
+6. Interfaces vs. Abstract Classes
+7. Composition vs. Aggregation
+8. Association (One-to-One, One-to-Many)
+9. Dependency vs. Association
+10. Method Overloading vs Overriding
+11. Dynamic Dispatch (Virtual Functions)
+12. Access Modifiers (Public, Private, Protected, Default)
+13. Static vs Instance Members
+14. Constructors (Copy, Default, Parameterized)
+15. Destructors and Finalizers
+16. Nested/Inner Classes
+17. Anonymous Classes
+18. Enumerations (Enums)
+19. Object Identity vs. Equality
+20. Shallow Copy vs. Deep Copy
+21. Immutable Objects
+22. Multiple Inheritance (and the Diamond Problem)
+23. Interface Default Methods
+24. Generics (Type Erasure)
+25. Reflection API
+
+---
+
+### 2. SOLID & Grasp Principles (26-45)
+
+26. Single Responsibility Principle (SRP)
+27. Open-Closed Principle (OCP)
+28. Liskov Substitution Principle (LSP)
+29. Interface Segregation Principle (ISP)
+30. Dependency Inversion Principle (DIP)
+31. Information Expert (GRASP)
+32. Creator Pattern (GRASP)
+33. Low Coupling (GRASP)
+34. High Cohesion (GRASP)
+35. Controller Pattern (GRASP)
+36. Polymorphism (GRASP)
+37. Pure Fabrication
+38. Indirection
+39. Protected Variations
+40. DRY (Don’t Repeat Yourself)
+41. KISS (Keep It Simple, Stupid)
+42. YAGNI (You Ain't Gonna Need It)
+43. Law of Demeter (Least Knowledge)
+44. Separation of Concerns (SoC)
+45. Tell, Don’t Ask Principle
+
+---
+
+### 3. Creational Design Patterns (46-65)
+
+46. Singleton (Eager vs. Lazy Initialization)
+47. Thread-safe Singleton (Double-checked locking)
+48. Enum Singleton
+49. Simple Factory
+50. Factory Method Pattern
+51. Abstract Factory Pattern
+52. Builder Pattern (Step-by-step construction)
+53. Fluent Interface (Chaining methods)
+54. Prototype Pattern (Cloning)
+55. Object Pool Pattern
+56. Dependency Injection (Constructor vs Setter)
+57. Inversion of Control (IoC) Containers
+58. Multiton Pattern
+59. Static Factory Methods
+60. Registry Pattern
+61. Lazy Loading / Virtual Proxy
+62. Service Locator (often an anti-pattern)
+63. Monostate Pattern
+64. Resource Acquisition Is Initialization (RAII)
+65. Factory vs. Abstract Factory Trade-offs
+
+---
+
+### 4. Structural Design Patterns (66-90)
+
+66. Adapter Pattern (Class vs. Object Adapter)
+67. Bridge Pattern (Decoupling abstraction)
+68. Composite Pattern (Tree structures)
+69. Decorator Pattern (Wrapping)
+70. Facade Pattern (Simplified Interface)
+71. Flyweight Pattern (Memory Optimization)
+72. Proxy Pattern (Remote, Virtual, Protection)
+73. Adapter vs. Bridge (The difference)
+74. Decorator vs. Proxy
+75. Module Pattern
+76. Private Class Data
+77. Twin Pattern
+78. Front Controller
+79. Marker Interface Pattern
+80. Extension Object
+81. Mixins
+82. Delegation Pattern
+83. Wrapper Classes
+84. Smart Pointers (LLD context)
+85. Opaque Pointers
+86. Data Mapper
+87. Identity Map
+88. Value Object Pattern
+89. Repository Pattern (LLD implementation)
+90. Unit of Work
+
+---
+
+### 5. Behavioral Design Patterns (91-120)
+
+91. Strategy Pattern (Interchangeable algorithms)
+92. Observer Pattern (Subject/Observer)
+93. Command Pattern (Encapsulating requests)
+94. Iterator Pattern (Accessing collections)
+95. Mediator Pattern (Centralized communication)
+96. Memento Pattern (Undo/Redo)
+97. State Pattern (State-dependent behavior)
+98. Template Method Pattern (Algorithm skeleton)
+99. Visitor Pattern (Adding operations to classes)
+100. Chain of Responsibility
+101. Interpreter Pattern
+102. Null Object Pattern
+103. Strategy vs. State Pattern
+104. Callback Pattern
+105. Event Listener
+106. Hook Methods
+107. Servants
+108. Specification Pattern
+109. Blackboard Pattern
+110. Double Dispatch
+111. Single Dispatch
+112. Active Object
+113. Scheduler Pattern
+114. Transaction Script
+115. Domain Model Pattern
+116. Anemic Domain Model (Anti-pattern)
+117. Rich Domain Model
+118. Side Effect Free Functions
+119. Pipeline Pattern
+120. Interceptor Pattern
+
+---
+
+### 6. UML & Modeling Concepts (121-145)
+
+121. Class Diagrams
+122. Sequence Diagrams (Time-ordered interactions)
+123. State Machine Diagrams
+124. Activity Diagrams
+125. Use Case Diagrams
+126. Communication Diagrams
+127. Component Diagrams
+128. Package Diagrams
+129. Deployment Diagrams
+130. Object Diagrams
+131. Multiplicity (1..*, 0..1)
+132. Visibility Symbols (+, -, #, ~)
+133. Stereotypes (<<interface>>, <<abstract>>)
+134. Notes and Comments in UML
+135. Realization (Implementing interfaces)
+136. Dependency (Dashed arrows)
+137. Generalization (Solid arrows)
+138. Composition (Filled diamond)
+139. Aggregation (Empty diamond)
+140. Reflexive Associations
+141. Ternary Associations
+142. Timing Diagrams
+143. Interaction Overview Diagrams
+144. Logical vs Physical View
+145. Domain Driven Design (DDD) - Entities, Aggregates, Value Objects
+
+---
+
+### 7. Concurrency & Threading in LLD (146-170)
+
+146. Thread vs. Process
+147. Thread Life Cycle (New, Runnable, Blocked, Waiting)
+148. Synchronized Blocks & Methods
+149. Volatile Keyword (Memory Visibility)
+150. Atomic Variables (AtomicInteger, etc.)
+151. Thread Pools (Executor Service)
+152. Deadlocks (Detection and Prevention)
+153. Race Conditions
+154. Mutex vs. Semaphore
+155. Read-Write Locks
+156. Reentrant Locks
+157. Condition Variables (Wait/Notify)
+158. Fork-Join Framework
+159. CompletableFuture / Promises
+160. Producer-Consumer Problem
+161. Dining Philosophers Problem (LLD view)
+162. Thread-local Storage
+163. Barrier Synchronization
+164. CountDownLatch vs CyclicBarrier
+165. Livelock & Starvation
+166. Double-checked Locking (Proper implementation)
+167. Immutable Objects for Thread Safety
+168. Blocking Queues
+169. Concurrent Collections (ConcurrentHashMap)
+170. Thread Interruption
+
+---
+
+### 8. Testing, Clean Code & Refactoring (171-200)
+
+171. Unit Testing Fundamentals
+172. Mocking vs. Stubbing vs. Spying
+173. Test Driven Development (TDD)
+174. Behavioral Driven Development (BDD)
+175. Code Smells: Bloaters (Long Method, Large Class)
+176. Code Smells: Object-Orientation Abusers (Switch Statements)
+177. Code Smells: Change Preventers (Divergent Change)
+178. Code Smells: Dispensables (Dead Code, Comments)
+179. Refactoring: Extract Method
+180. Refactoring: Replace Temp with Query
+181. Refactoring: Move Method/Field
+182. Refactoring: Pull Up / Push Down Member
+183. Cyclomatic Complexity
+184. Naming Conventions (CamelCase, snake_case)
+185. Error Handling: Checked vs Unchecked Exceptions
+186. Custom Exception Hierarchies
+187. defensive Programming
+188. Assertions vs Exceptions
+189. Logging Best Practices
+190. Memory Management (Stack vs Heap)
+191. Garbage Collection Basics
+192. Finalizers vs Cleaners
+193. Profiling Tools
+194. Static Code Analysis (SonarQube/Linting)
+195. Design by Contract
+196. Fluent Assertions
+197. Code Coverage (Line vs Branch)
+198. Integration Testing (within LLD)
+199. Benchmarking
+200. Pair Programming / Code Review Checklist
+
+---
+
+**How to use this for your PDF:**
+Pick one concept from each category every day. Use the **Master Prompt** I gave you earlier to generate a "Cheat Sheet" for that concept.
+
+**Would you like me to generate a sample "Interview Answer" and "Code Snippet" for one of the complex Behavioral patterns, like the Chain of Responsibility or Visitor Pattern?**
