@@ -1,0 +1,14 @@
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\bin\Debug\net10.0\CSharpFundamentals.exe
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\bin\Debug\net10.0\CSharpFundamentals.deps.json
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\bin\Debug\net10.0\CSharpFundamentals.runtimeconfig.json
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\bin\Debug\net10.0\CSharpFundamentals.dll
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\bin\Debug\net10.0\CSharpFundamentals.pdb
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.AssemblyInfoInputs.cache
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.AssemblyInfo.cs
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.csproj.CoreCompileInputs.cache
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.dll
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\refint\CSharpFundamentals.dll
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.pdb
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\CSharpFundamentals.genruntimeconfig.cache
+C:\Users\sahug\OneDrive\Desktop\ganeshdocs\antigravity\learning\DotnetLearning\01-CSharpFundamentals\obj\Debug\net10.0\ref\CSharpFundamentals.dll
