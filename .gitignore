@@ -1,0 +1,16 @@
+﻿*.exe
+*.o
+*.obj
+*.out
+.vscode/
+.git/
+all_files.csv
+file_list*.txt
+batch_commits.ps1
+rewrite_git_history.ps1
+final_git_push.ps1
+# Ignore system/agent metadata
+task.md
+implementation_plan.md
+walkthrough.md
+pod.yaml
