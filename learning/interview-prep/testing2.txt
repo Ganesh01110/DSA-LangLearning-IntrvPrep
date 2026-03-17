@@ -1,0 +1,118 @@
+here i want to learn the concepts reltaed to testing for a top tier resume , 
+
+SDLC, STLC, Bug Life Cycle, Severity & Priority,
+
+Testing: Manual Testing, Test Case Design, Regression Testing, Integration Testing, API Testing
+Tools: Postman, Thunder Client, Swagger, Jira (basics)
+Automation: Selenium (Basic), Jest (Unit Testing)
+
+1. Test Design Techniques (VERY IMPORTANT)
+
+Learn:
+
+Equivalence Partitioning
+Boundary Value Analysis
+Decision Table Testing
+State Transition Testing
+
+👉 Why:
+
+This is what real QA interviews test
+
+2. Bug Tracking Tool (MANDATORY)
+
+Learn:
+
+Jira
+
+Know:
+
+Bug creation
+Severity vs Priority
+Workflow (Open → Closed)
+
+3. API Testing (ADVANCED LEVEL)
+
+You already know basics → upgrade to:
+
+Auth tokens (JWT testing)
+Status code validation
+Schema validation
+Negative testing
+
+Tools:
+
+Postman
+Swagger (already know)
+
+2. HIGH-IMPACT (makes resume 🔥)
+🔥 4. Selenium (Automation)
+
+Learn:
+
+Locators
+Forms / clicks
+Assertions
+TestNG / JUnit basics
+
+👉 This converts you into:
+
+🔥 SDET (higher value)
+
+5. API Automation
+
+Use:
+
+Postman Collection Runner
+Newman (CLI)
+
+👉 Very underrated skill
+
+🔥 6. Basic Performance Testing
+
+Learn:
+
+Basics of load testing
+
+Tool:
+
+JMeter
+
+👉 Even basic knowledge = big boost
+
+7. Security Testing Awareness
+
+You already touched:
+
+Snyk
+
+Add:
+
+Basic OWASP Top 10 awareness
+🧪 3. PROJECTS TO ADD (VERY IMPORTANT)
+🔥 Project 1 (MANDATORY)
+Test Suite for your Hospital System
+
+Add:
+
+Test cases (Excel / doc)
+Bug reports
+API test collection (Postman)
+🔥 Project 2 (OPTIONAL BUT POWERFUL)
+Selenium Automation Mini Project
+
+Example:
+
+Login automation
+Form validation testing
+🔥 Project 3 (ADVANCED EDGE)
+API Testing Framework
+Automate API tests using Postman/Newman
+📄 FINAL QA STACK (🔥 version)
+Manual Testing, Test Case Design, STLC, Bug Life Cycle  
+API Testing (Postman, Swagger, Newman)  
+Automation: Selenium (TestNG/JUnit), Jest  
+Bug Tracking: Jira  
+Database Testing: SQL  
+Performance Testing: JMeter (Basic)  
+Security Awareness: OWASP, Snyk  
