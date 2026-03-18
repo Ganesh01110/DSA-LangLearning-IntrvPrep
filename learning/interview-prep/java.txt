@@ -1,0 +1,102 @@
+
+i want you to create a java.md file inside interview-prep folder where (in this single .md file with well formatted manner you have to list out arout 150 to 200 around questions for interview point of view  in what/how/when/why format with interview tip for below concepts )"🔹 1. Core Java Fundamentals (Must-Have Base)
+Data Types & Variables
+Operators & Control Flow (if, loops, switch)
+Arrays & Strings
+Methods & Recursion
+Input/Output basics
+
+2. OOP Concepts (Very Important)
+Class & Object
+Encapsulation
+Abstraction
+Inheritance
+Polymorphism
+Constructor & this keyword
+
+3. Collections Framework (Highly Important)
+List (ArrayList, LinkedList)
+Set (HashSet, TreeSet)
+Map (HashMap, TreeMap)
+Iterator & Comparable vs Comparator
+
+👉 Used in almost every real project
+
+⚙️ 🔹 4. Exception Handling
+try-catch-finally
+throw vs throws
+Custom exceptions
+
+👉 Makes code robust and production-ready
+
+🧵 🔹 5. Multithreading & Concurrency (Advanced + High Value)
+Thread creation (Runnable, Thread)
+Synchronization
+Locks & Executors
+Deadlock
+Concurrent collections
+
+👉 Very important for backend roles
+
+💾 🔹 6. Memory Management & JVM (Deep Understanding)
+JVM, JRE, JDK
+Heap vs Stack
+Garbage Collection
+ClassLoader
+
+👉 Frequently asked in interviews
+
+🔗 🔹 7. Java 8+ Features (Must for Modern Dev)
+Lambda Expressions
+Streams API
+Functional Interfaces
+Optional
+Method References
+
+👉 Makes code cleaner & efficient
+
+📂 🔹 8. File Handling & Serialization
+File I/O (File, BufferedReader)
+Serialization & Deserialization
+🌐 🔹 9. JDBC (Database Connectivity)
+Connecting to DB
+CRUD operations
+PreparedStatement
+
+👉 Important for backend development
+
+🧩 🔹 10. Design Principles & Patterns
+SOLID Principles
+Singleton Pattern
+Factory Pattern
+Dependency Injection
+
+👉 Shows senior-level thinking
+
+🔍 🔹 11. Important Language Concepts
+static keyword
+final, finally, finalize
+equals() vs ==
+hashCode()
+String vs StringBuilder vs StringBuffer
+Immutability
+
+👉 Very common interview traps
+
+⚡ 🔹 12. Advanced Topics (For Strong Profile)
+Reflection API
+Annotations
+Generics
+ClassLoader mechanism
+🧠 🔹 How to Prioritize (Very Important)
+🔥 Focus First:
+OOP
+Collections
+Java 8
+Exception Handling
+JVM basics
+🚀 Then:
+Multithreading
+JDBC
+Design Patterns
+"
