@@ -1,4 +1,4 @@
-﻿# Ultimate Java Interview Guide (Mid-Level Backend Engineer)
+# Ultimate Java Interview Guide (Mid-Level Backend Engineer)
 *This guide contains high-yield interview questions focusing on the 80% most important concepts to understand Java heavily used in modern and legacy backend systems.*
 
 ## 🔥 PRIORITY 1: Core Fundamentals & OOP
@@ -188,3 +188,159 @@
 * **When:** Business logic errors (e.g., `UserNotFoundException`, `InsufficientFundsException`).
 * **Why:** Makes logs and error handling semantic and readable.
 
+## 🔥 PRIORITY 4: Memory Management (JVM) & Multithreading
+
+### 🔹 6. Memory Management & JVM
+**Q32. JVM vs JRE vs JDK**
+* **What:**
+  * JVM: Executes bytecode.
+  * JRE: JVM + Core Libraries (Runtime environment).
+  * JDK: JRE + Development Tools (javac, debugger).
+* **💡 Tip:** Write Once, Run Anywhere is possible because each OS has a specific JVM.
+
+**Q33. Heap vs Stack Memory**
+* **What/Why:**
+  * **Heap:** Stores Objects and JRE classes. Shared across all threads. Garbage collected.
+  * **Stack:** Stores local variables and method calls. Thread-specific. LIFO structure.
+* **💡 Tip:** `OutOfMemoryError` = Heap is full. `StackOverflowError` = Stack is full (usually infinite recursion).
+
+**Q34. Garbage Collection (GC)**
+* **What:** Background daemon thread the JVM runs to reclaim memory of unreachable objects.
+* **How:** "Mark and Sweep" algorithm. Objects are marked if reachable, swept if unreachable.
+* **Why:** Prevents manual memory management (like C++ `delete`), avoiding memory leaks.
+* **💡 Tip:** You cannot force GC using `System.gc()`, it's just a suggestion to JVM.
+
+**Q35. ClassLoader**
+* **What:** Part of JRE that dynamically loads Java classes into JVM memory.
+* **Types:** Bootstrap (Core runtime classes), Extension, Application (our codebase).
+* **Why:** Essential to load classes only when required (lazy loading).
+
+### 🔹 7. Multithreading & Concurrency
+**Q36. Process vs Thread**
+* **What:** Process is an executing program (heavy). Thread is a sub-unit of a process sharing the same memory (light).
+* **Why:** Multithreading allows simultaneous execution, maximizing CPU usage.
+
+**Q37. Runnable vs Thread class**
+* **What/How:** Two ways to create a thread: `implement Runnable` or `extend Thread`.
+* **When/Why:** Always use `Runnable`! Java doesn't support multiple class inheritance, so extending `Thread` wastes your inheritance opportunity.
+
+**Q38. Thread Lifecycle States**
+* **What:** New -> Runnable -> Running -> Blocked/Waiting -> Terminated (Dead).
+
+**Q39. Synchronization**
+* **What:** Restricting access to a shared resource to only ONE thread at a time using monitors/locks.
+* **How:** `synchronized` keyword on methods or code blocks.
+* **Why:** Prevents "Race Conditions" where multiple threads corrupt shared data.
+
+**Q40. Deadlock**
+* **What:** When Thread A holds Lock 1 waiting for Lock 2, and Thread B holds Lock 2 waiting for Lock 1. Both wait forever.
+* **How to prevent:** Always acquire locks in a consistent global order.
+
+**Q41. Volatile Keyword**
+* **What:** Ensures that changes to a variable are strictly written to main memory and not cached by individual threads.
+* **Why:** Resolves visibility problems across threads.
+
+**Q42. ExecutorService & Thread Pools**
+* **What:** A framework to manage and reuse threads instead of manually doing `new Thread()`.
+* **How:** `ExecutorService tp = Executors.newFixedThreadPool(10);`
+* **Why:** Creating raw threads is extremely expensive for the CPU. Thread pools reuse a fixed number of threads to process tasks (crucial in web servers like Tomcat).
+
+**Q43. Callable vs Runnable**
+* **What:** Both serve thread logic. But `Runnable` returns `void` and cannot throw checked exceptions. `Callable` returns a `Future<T>` and can throw exceptions.
+
+**Q44. Concurrent Collections**
+* **What:** Thread-safe implementations using fine-grained locking or lock-stripping.
+* **Examples:** `ConcurrentHashMap`, `CopyOnWriteArrayList`, `BlockingQueue`.
+* **Why:** Standard `Collections.synchronizedList()` locks the entire object, destroying performance. `ConcurrentHashMap` only locks a specific bucket segment.
+
+## 🚀 ADVANCED: JDBC, Design Patterns, & Core Quirks
+
+### 🔹 8. File Handling & Serialization
+**Q45. File I/O (File, BufferedReader)**
+* **What:** Used to read/write external resources. `BufferedReader` reads text from a character-input stream, buffering characters for efficiency.
+* **Why:** Direct byte reading is slow. Buffering minimizes actual physical disk reads.
+
+**Q46. Serialization & transient keyword**
+* **What:** Serialization converts an Object's state to a Byte Stream (to save to file/network). Deserialization is the reverse. Requires implementing `Serializable` marker interface.
+* **When/How:** Mark fields as `transient` if you DO NOT want them serialized (like passwords).
+
+### 🔹 9. JDBC (Backend Fundamentals)
+**Q47. JDBC Flow**
+* **What/How:** Register Driver -> Open `Connection` -> Create `Statement` -> Execute Query -> Return `ResultSet` -> Close Connection.
+* **Why:** The legacy, core API for Java database interaction. Underlying layer of Hibernate/JPA.
+
+**Q48. Statement vs PreparedStatement**
+* **What/How:** `Statement` compiles query every time. `PreparedStatement` pre-compiles and parameterizes query (`SELECT * FROM X WHERE id = ?`).
+* **Why:** `PreparedStatement` prevents **SQL Injection** and runs faster on caching. Always use it!
+
+**Q49. Connection Pooling (e.g., HikariCP)**
+* **What:** Keeping a pool of database connections open to reuse them via JDBC.
+* **Why:** Opening/closing networking DB connections is incredibly slow and expensive.
+
+### 🔹 10. Design Principles & Patterns
+**Q50. SOLID Principles**
+* **What / Why (Interview Gold):**
+  * **S**ingle Responsibility: Class should have one reason to change.
+  * **O**pen/Closed: Open for extension, closed for modification.
+  * **L**iskov Substitution: Child classes must seamlessly replace parent classes.
+  * **I**nterface Segregation: Many small interfaces are better than one fat interface.
+  * **D**ependency Inversion: Depend on abstractions (interfaces), not concretions.
+
+**Q51. Singleton Pattern**
+* **What:** Restricts a class from instantiating more than one object.
+* **How:** Private constructor, static instance variable, public static `getInstance()` method.
+* **When/Why:** Database connection managers, Loggers.
+* **💡 Tip:** Is your Singleton thread-safe? Mention double-checked locking using `volatile`.
+
+**Q52. Factory Pattern**
+* **What:** Creates object without exposing instantiation logic to the client. Returns interface type.
+* **Why:** Loosely couples codebase so adding new subclasses doesn't break client code.
+
+**Q53. Dependency Injection (DI)**
+* **What:** (Inversion of Control logic) Instead of creating dependencies using `new Object()`, you pass them in via Constructor. 
+* **Why:** Solves tight coupling, making unit testing incredibly easy. Core philosophy of Spring Boot.
+
+### 🔹 11. Important Language Traps
+**Q54. final, finally, finalize**
+* **What:**
+  * `final`: Keyword (Cannot change var, override method, extend class).
+  * `finally`: Block in exception handling (always executes).
+  * `finalize`: Deprecated method called right before garbage collection.
+
+**Q55. equals() vs ==**
+* **What:** `==` compares object memory references (pointers). `.equals()` compares logical object equivalency (content).
+* **💡 Tip:** Always override `equals()` if comparing custom objects. 
+
+**Q56. equals() and hashCode() Contract**
+* **What:** If two objects are equal according to `equals()`, they MUST return the same `hashCode()`.
+* **Why:** Essential for HashMap functionality. If violated, you won't be able to retrieve an object tightly packed in a Hash Bucket.
+
+**Q57. String vs StringBuilder vs StringBuffer**
+* **What:**
+  * `String`: Immutable. Modifying it creates new objects.
+  * `StringBuilder`: Mutable and fast. Not thread-safe.
+  * `StringBuffer`: Mutable but thread-safe (synchronized methods).
+* **When:** Use `StringBuilder` when concatenating logic inside loops!
+
+**Q58. String Pool & Immutability**
+* **What:** Security and Optimization. Strings literal `"Test"` go into String Pool. If another String uses `"Test"`, it points to the same memory.
+* **Why Immutable?** Prevents caching errors, makes them thread-safe implicitly, and secures Network/DB passwords from being altered randomly by pointer access.
+
+### 🔹 12. Advanced Topics 
+**Q59. Annotations (`@`)**
+* **What:** Metadata providing data about a program that is not part of the program itself.
+* **Why:** Replaces boilerplate XML configuration (Core of Spring Boot, Hibernate).
+
+**Q60. Reflection API**
+* **What:** Allows an executing Java program to examine or introspect upon itself (manipulate internal properties of a class even if `private` at runtime!).
+* **Why:** Used extensively by frameworks like Spring (to wire dependencies) and JUnit (to invoke tests). Slow and dangerous for standard apps.
+
+**Q61. Generics (`<T>`)**
+* **What:** Allowing classes/methods to operate on objects of various types while providing compile-time type safety.
+* **Why:** Fixes the old `ClassCastException` problem where `ArrayList` held raw `Object` types.
+
+---
+### 🧠 Final Interview Tips for Backend Roles
+1. **Never just define a concept.** Always immediately follow up with a context where you would use it. (e.g., "A HashMap provides O(1) lookup, *which I used recently to cache API credentials instead of querying the DB constantly.*")
+2. **Understand "Under the Hood":** Seniority means knowing *how* a HashMap resolves collisions or *how* a Thread Pool queues tasks.
+3. **Bring everything to Dependency Injection:** If they ask about Constructors, mention how DI wires things through Constructors to avoid tight coupling.
