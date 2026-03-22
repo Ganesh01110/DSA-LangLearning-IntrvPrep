@@ -1,0 +1,139 @@
+i want to learn some devops tools/skills/concept here , so i want you to analyse below concepts about devops things i have written below , give detailed info about these so i can learns from it now and refer these in future during interview preparation , make it in such a way that i can understand it well and can explain it to interviewer , add diagrams , steps , examples , real life scenarios , interview tips , (what/how/when/why) format whereever neccessary , and also tell me if i have to install or configure certain things for that , youhave to create devops2.md where you will write about these topics 
+
+
+1. CONTAINER ORCHESTRATION (CRITICAL)
+🔥 Kubernetes (MANDATORY)
+Learn:
+Core:
+Pods
+Deployments
+ReplicaSets
+Services (ClusterIP, NodePort, LoadBalancer)
+Config:
+ConfigMaps
+Secrets
+Reliability:
+Liveness probe
+Readiness probe
+Scaling:
+Horizontal Pod Autoscaler (concept)
+Debugging:
+Logs
+Describe
+Exec into container
+🎯 Interview Topics:
+How Kubernetes manages scaling
+Difference between Deployment vs Pod
+How services communicate
+🏗️ 2. INFRASTRUCTURE AS CODE (IaC)
+🔥 Terraform (MANDATORY)
+Learn:
+Providers
+Resources
+Variables
+State file
+Basic modules (optional)
+🎯 Interview Topics:
+Why Terraform over manual infra
+What is state file
+Idempotency
+☁️ 3. CLOUD (VERY IMPORTANT)
+
+Start with:
+👉 Amazon Web Services
+
+Learn ONLY THESE:
+Compute:
+EC2
+Storage:
+S3
+Networking (basic):
+VPC (concept)
+Security groups
+🎯 Interview Topics:
+How you deploy app on cloud
+Difference EC2 vs containers
+Basic scaling idea
+⚙️ 4. CI/CD (YOU ARE ALREADY STRONG — JUST UPGRADE)
+
+You already use:
+👉 GitHub Actions
+
+Add concepts:
+Pipeline stages (build, test, deploy)
+Artifact handling
+Rollback strategy (concept)
+Environment-based deployment
+🎯 Interview Topics:
+How pipeline works end-to-end
+Parallel vs sequential jobs
+Failure handling
+📊 5. OBSERVABILITY & MONITORING
+
+You already used:
+👉 Prometheus
+👉 Grafana
+
+Upgrade knowledge:
+Metrics vs Logs vs Traces
+Alerting basics
+Dashboard interpretation
+🎯 Interview Topics:
+How you monitor system health
+What metrics matter (CPU, memory, latency)
+🔐 6. SECURITY (BONUS BUT IMPORTANT)
+
+You already used:
+👉 Snyk
+
+Add:
+Basic DevSecOps idea
+Dependency scanning
+Secret management (K8s Secrets)
+🐧 7. LINUX (FOUNDATION)
+
+You said basic — just ensure:
+
+Must know:
+File permissions
+Process management
+Networking basics (netstat, curl)
+🌐 8. NETWORKING (LIGHT BUT IMPORTANT)
+Learn basics:
+HTTP/HTTPS
+DNS
+Load balancing (concept)
+
+
+🔥 FINAL CHECKLIST (GIVE THIS TO AGENT)
+1. Kubernetes:
+   - Pods, Deployments, Services
+   - ConfigMaps, Secrets
+   - Scaling, Probes, Debugging
+
+2. Terraform:
+   - Providers, Resources, Variables
+   - State file, Basic provisioning
+
+3. Cloud (AWS):
+   - EC2, S3
+   - VPC basics, Security groups
+
+4. CI/CD:
+   - Pipeline stages
+   - Parallel jobs
+   - Deployment strategies
+
+5. Monitoring:
+   - Metrics, Logs, Alerts
+   - Prometheus, Grafana concepts
+
+6. Security:
+   - DevSecOps basics
+   - Snyk, dependency scanning
+
+7. Linux:
+   - Commands, processes, networking
+
+8. Networking:
+   - HTTP, DNS, Load balancing basics
